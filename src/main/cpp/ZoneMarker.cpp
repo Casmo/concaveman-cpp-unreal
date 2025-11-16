@@ -32,9 +32,9 @@ void AZoneMarker::Tick(float DeltaTime)
 */
 void AZoneMarker::AddLocation(FVector Location, float Radius, bool bUpdateSpline)
 {
-	for (int32 i = 0; i < 32; i++)
+	for (int32 i = 0; i < 4; i++)
 	{
-		float angle = i * 2 * PI / 32;
+		float angle = i * 2 * PI / 4;
 		FVector newLocation = Location + FVector(Radius * FMath::Cos(angle), Radius * FMath::Sin(angle), 0.0f);
 		if (!IsPointInsidePolygon(newLocation, LocationArray))
 		{
