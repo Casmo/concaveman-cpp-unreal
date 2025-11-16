@@ -19,9 +19,6 @@ public:
 protected:
 	virtual void BeginPlay() override;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Zone")
-	float MaxDistance = 100.0f;
-
 public:	
 	virtual void Tick(float DeltaTime) override;
 
@@ -53,7 +50,7 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Zone")
 	void UpdateSpline();
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Zone")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Zone")
 	TArray<FVector> LocationArray;
 
 	/**
